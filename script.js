@@ -103,3 +103,13 @@ contactForm.addEventListener('submit', (e) => {
         contactForm.reset();
     }, 3000);
 });
+
+// ===== FAQ Accordion =====
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+    });
+});

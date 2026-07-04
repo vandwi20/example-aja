@@ -878,6 +878,74 @@ section {
 
 .form-group textarea { resize: vertical; }
 
+/* ===== FAQ ===== */
+.faq {
+    background: #f8fafc;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.faq-question {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a2e;
+    transition: color 0.3s;
+    user-select: none;
+    gap: 16px;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    color: #667eea;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 24px 20px;
+}
+
+.faq-answer p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* ===== Footer ===== */
 .footer {
     background: #1a1a2e;
