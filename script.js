@@ -105,11 +105,12 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 // ===== FAQ Accordion =====
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
-    });
+document.addEventListener('click', (e) => {
+    const question = e.target.closest('.faq-question');
+    if (!question) return;
+    const item = question.closest('.faq-item');
+    if (!item) return;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
 });
